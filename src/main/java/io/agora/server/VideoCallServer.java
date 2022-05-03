@@ -9,6 +9,8 @@ import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class VideoCallServer {
     static String appId = "23d4cf4473a24ee78a3810a8c61067b7";
@@ -20,6 +22,7 @@ public class VideoCallServer {
     static String userToken;
     static ServerSocket serverSocket;
     private Socket clientSocket;
+    static Lock TokenLock = new ReentrantLock();
 
     public VideoCallServer(){
         try{
